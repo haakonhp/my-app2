@@ -1,8 +1,9 @@
 import { LitElement, html, css, customElement } from 'lit-element';
-import '@vaadin/button/src/vaadin-button.js';
 import '@vaadin/grid/src/vaadin-grid.js';
 import '@vaadin/grid/src/vaadin-grid-column.js';
 import '@vaadin/grid/src/vaadin-grid-column-group.js';
+import '@vaadin/button/src/vaadin-button.js';
+import '@vaadin/date-picker/src/vaadin-date-picker.js';
 
 @customElement('chris-view')
 export class ChrisView extends LitElement {
@@ -20,7 +21,10 @@ export class ChrisView extends LitElement {
 <vaadin-button>
   Button 
 </vaadin-button>
-<vaadin-grid items="[[items]]">
+<vaadin-button theme="primary success" tabindex="0">
+  Primary Success 
+</vaadin-button>
+<vaadin-grid items="[[items]]" is-attached multi-sort-priority="prepend">
  <vaadin-grid-column width="50px" flex-grow="0">
   <template class="header">
     # 
@@ -87,6 +91,7 @@ export class ChrisView extends LitElement {
   </vaadin-grid-column>
  </vaadin-grid-column-group>
 </vaadin-grid>
+<vaadin-date-picker></vaadin-date-picker>
 `;
   }
 
